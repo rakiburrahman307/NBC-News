@@ -105,7 +105,7 @@ const NewsDetailsPage = () => {
               />
               <div className='border-l-8 border-red-500 pl-5 mt-5 px-3 md:px-0'>
                 <p className='text-justify px-3 md:px-0'>
-                  {article.description}
+                  {article.description}<span className="text-red-700">{article?.source?.name}</span>
                 </p>
               </div>
             </div>
@@ -120,7 +120,7 @@ const NewsDetailsPage = () => {
               />
               <div className='border-l-8 border-red-500 pl-5 mt-5 px-3 md:px-0'>
                 <p className='text-justify px-3 md:px-0'>
-                  {article?.description}
+                  {article?.description} <span className="text-red-700">{article?.source?.name}</span>
                 </p>
               </div>
             </div>
@@ -187,7 +187,7 @@ const NewsDetailsPage = () => {
                 <div className='flex flex-col md:flex-row gap-5'>
                   <div className='rounded-full flex items-center justify-center md:justify-start md:items-start md:h-[134px] '>
                     <img
-                      src={authorPic}
+                      src={article.urlToImage ||authorPic}
                       alt='author'
                       className='w-[100px] object-cover rounded-full h-[100px]'
                     />
@@ -197,7 +197,7 @@ const NewsDetailsPage = () => {
                       Author
                     </h5>
                     <h3 className='font-bold text-xl text-[#2A2A2A]'>
-                      Caroline Casey
+                      {article?.author || "Caroline Casey"}
                     </h3>
                     <p className='text-base text-justify px-2 md:px-0 w-full md:w-[356px] text-[#2A2A2A]'>
                       Caroline Casey is an award-winning social activist and

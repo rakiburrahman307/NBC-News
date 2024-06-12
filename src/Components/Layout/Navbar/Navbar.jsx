@@ -69,9 +69,9 @@ const Navbar = () => {
           <div className='bg-white shadow'>
             <div className='container mx-auto'>
               <div className='flex justify-between items-center py-4 px-2 max-w-[1366px] mx-auto'>
-                <div>
+                <Link to="/">
                   <img src={logo} alt='Logo' className='w-15 h-12' />
-                </div>
+                </Link>
 
                 <ul className='md:flex justify-around items-center gap-8 list-none hidden'>
                   {navLink.map((nav, idx) => (
