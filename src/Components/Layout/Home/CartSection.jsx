@@ -49,7 +49,7 @@ const CartSection = ({ liveData }) => {
   }, [url]);
 
   return (
-    <section className='max-w-[1366px] mx-auto flex flex-col md:flex-row gap-20'>
+    <section className='max-w-[1366px] mx-auto flex flex-col md:flex-row gap-10 md:gap-20'>
       <div className='max-w-[916px]'>
         <div className='flex items-center justify-between px-5 bg-white h-[54px] md:w-[916px] mb-2'>
           <div className='flex items-center gap-5 px-3 md:px-0'>

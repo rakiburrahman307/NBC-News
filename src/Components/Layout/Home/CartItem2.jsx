@@ -31,7 +31,7 @@ const CartItem2 = ({ newsItem }) => {
           />
         </div>
       </div>
-      <div className="p-2">
+      <div className='p-2'>
         <h2 className='w-[380px] text-left h-auto md:h-[71px] font-bold text-[#2A2A2A]'>
           {newsItem?.title || "Title not available"}
         </h2>

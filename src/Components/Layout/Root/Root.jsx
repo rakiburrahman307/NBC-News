@@ -3,13 +3,13 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 const Root = () => {
-    return (
-        <div className="max-w-[1366px] mx-auto">
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div className='max-w-[1366px] mx-auto'>
+      <Navbar></Navbar>
+      <Outlet></Outlet>
+      <Footer></Footer>
+    </div>
+  );
 };
 
 export default Root;

@@ -6,20 +6,24 @@ import MiddleBar from "./MiddleBar";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-    const [newsData, setNewsData] =useState([]);
-    const [loading, setLoading] = useState(false);
-  const {category} = useParams();
-
+  const [newsData, setNewsData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { category } = useParams();
 
   const getNewsData = async (category) => {
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${
+      import.meta.env.VITE_API_KEY
+    }`;
     try {
       const res = await fetch(url);
       if (!res.ok) {
         throw new Error(`An error occurred: ${res.statusText}`);
       }
       const data = await res.json();
-      const filteredData = data?.articles?.filter(article => article?.source?.id !== null && article?.urlToImage !== null);
+      const filteredData = data?.articles?.filter(
+        (article) =>
+          article?.source?.id !== null && article?.urlToImage !== null
+      );
       setNewsData(filteredData);
     } catch (error) {
       console.error("Error fetching the news data:", error);

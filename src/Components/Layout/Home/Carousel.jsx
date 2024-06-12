@@ -12,9 +12,9 @@ import { Pagination } from "swiper/modules";
 import { CiBookmark, CiHeart } from "react-icons/ci";
 import { MdOutlineIosShare } from "react-icons/md";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Carousel = ({ newsData }) => {
-
   return (
     <>
       <Swiper
@@ -42,7 +42,10 @@ const Carousel = ({ newsData }) => {
       >
         {newsData?.map((news, idx) => (
           <SwiperSlide key={idx}>
-            <div className='flex gap-5 mt-5 h-auto md:h-52 flex-col md:flex-row px-3 md:px-0'>
+            <Link
+              to={`/news_details/${news?.title}`}
+              className='flex gap-5 mt-5 h-auto md:h-52 flex-col md:flex-row px-3 md:px-0'
+            >
               <div className='group relative'>
                 <img
                   src={news?.urlToImage || example}
@@ -75,7 +78,7 @@ const Carousel = ({ newsData }) => {
                   {news?.description}
                 </p>
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

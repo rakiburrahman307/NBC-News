@@ -69,7 +69,7 @@ const Navbar = () => {
           <div className='bg-white shadow'>
             <div className='container mx-auto'>
               <div className='flex justify-between items-center py-4 px-2 max-w-[1366px] mx-auto'>
-                <Link to="/">
+                <Link to='/'>
                   <img src={logo} alt='Logo' className='w-15 h-12' />
                 </Link>
 

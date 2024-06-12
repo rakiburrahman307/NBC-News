@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import { CiBookmark, CiHeart } from "react-icons/ci";
+import { CiBookmark } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa6";
 import { MdOutlineIosShare } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -25,7 +26,7 @@ const RelatedCard = ({ newsItem }) => {
           </h3>
         </div>
         <div className='flex items-center gap-16 justify-center border-t-2 pt-3'>
-          <CiHeart size={20} />
+          <FaHeart className='text-red-700' size={20} />
           <MdOutlineIosShare size={20} />
           <CiBookmark size={20} />
         </div>

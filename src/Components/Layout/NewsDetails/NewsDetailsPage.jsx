@@ -9,6 +9,7 @@ import AdsCard from "./AdsCard";
 import authorPic from "../../../assets/author.png";
 import { FaTwitter } from "react-icons/fa";
 import RelatedCard from "./RelatedCard";
+import Floating from "./Floating";
 
 const NewsDetailsPage = () => {
   const { title } = useParams();
@@ -22,6 +23,13 @@ const NewsDetailsPage = () => {
       `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${apiKey}`,
       `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`,
       `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`,
+      `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${apiKey}`,
+      `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${apiKey}`,
+      `https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=${apiKey}`,
+      `https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=${apiKey}`,
+      `https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=${apiKey}`,
+      `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiKey}`,
+      `https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${apiKey}`,
     ];
 
     try {
@@ -47,8 +55,6 @@ const NewsDetailsPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [title]);
 
-  console.log(title);
-
   if (isLoading) {
     return (
       <div className=' min-h-screen flex justify-center items-center'>
@@ -57,7 +63,7 @@ const NewsDetailsPage = () => {
     );
   }
 
-  if (singleData.length === 0) {
+  if (singleData?.length === 0) {
     return <div>No article found with the title {title}</div>;
   }
 
@@ -79,7 +85,7 @@ const NewsDetailsPage = () => {
           />
         </div>
 
-        <div className='flex flex-col md:flex-row gap-[90px] mt-10'>
+        <div className='flex flex-col md:flex-row gap-[90px] mt-10 group'>
           <div className='flex flex-col justify-start'>
             <div className='flex flex-col md:flex-row justify-start items-start gap-3 md:items-center mt-3 mb-3 px-3 md:px-0'>
               <p className='text-[#2A2A2A] w-24 h-5 text-[13px]'>
@@ -89,7 +95,8 @@ const NewsDetailsPage = () => {
                 By {article.author} | 4min read
               </p>
             </div>
-            <p className='w-full px-3 md:px-0 md:w-[705px] text-justify text-lg text-[#2A2A2A]'>
+            <Floating></Floating>
+            <p className='w-full relative px-3 md:px-0 md:w-[705px] text-justify text-lg text-[#2A2A2A]'>
               {article.content}
             </p>
             <div className='border-t-2 border-b-2 border-[#C31815] my-10'>
@@ -105,7 +112,8 @@ const NewsDetailsPage = () => {
               />
               <div className='border-l-8 border-red-500 pl-5 mt-5 px-3 md:px-0'>
                 <p className='text-justify px-3 md:px-0'>
-                  {article.description}<span className="text-red-700">{article?.source?.name}</span>
+                  {article.description}
+                  <span className='text-red-700'>{article?.source?.name}</span>
                 </p>
               </div>
             </div>
@@ -120,7 +128,8 @@ const NewsDetailsPage = () => {
               />
               <div className='border-l-8 border-red-500 pl-5 mt-5 px-3 md:px-0'>
                 <p className='text-justify px-3 md:px-0'>
-                  {article?.description} <span className="text-red-700">{article?.source?.name}</span>
+                  {article?.description}{" "}
+                  <span className='text-red-700'>{article?.source?.name}</span>
                 </p>
               </div>
             </div>
@@ -187,7 +196,7 @@ const NewsDetailsPage = () => {
                 <div className='flex flex-col md:flex-row gap-5'>
                   <div className='rounded-full flex items-center justify-center md:justify-start md:items-start md:h-[134px] '>
                     <img
-                      src={article.urlToImage ||authorPic}
+                      src={article.urlToImage || authorPic}
                       alt='author'
                       className='w-[100px] object-cover rounded-full h-[100px]'
                     />
