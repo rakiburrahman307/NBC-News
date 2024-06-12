@@ -29,7 +29,7 @@ const Home = () => {
   };
   useEffect(() => {
     setLoading(true);
-    getNewsData(category);
+    getNewsData(category || "health");
   }, [category]);
 
   return (

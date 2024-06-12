@@ -10,7 +10,7 @@ const CartItem = ({ newsItem }) => {
     };
 
     return (
-        <Link to={`${newsItem?.source?.id}`} className='border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col gap-5 w-full md:w-[438px] h-auto p-3 md:p-0 md:h-[520px]'>
+        <Link to={`/news_details/${newsItem?.title}`} className='border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col gap-5 w-full md:w-[438px] h-auto p-3 md:p-0 md:h-[520px]'>
             <div className='relative'>
                 <img
                     src={newsItem?.urlToImage || 'https://via.placeholder.com/438x210'}

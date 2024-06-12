@@ -86,12 +86,12 @@ const CartSection = ({ liveData }) => {
           {flexToggle ? (
             <BsGrid1X2Fill
               onClick={() => setFlexToggle(!flexToggle)}
-              className='text-[#000000]'
+              className='text-[#000000] cursor-pointer'
             />
           ) : (
             <BsGrid1X2
               onClick={() => setFlexToggle(!flexToggle)}
-              className='text-[#000000]'
+              className='text-[#000000] cursor-pointer'
             />
           )}
         </div>
