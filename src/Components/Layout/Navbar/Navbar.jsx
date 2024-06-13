@@ -113,18 +113,23 @@ const Navbar = () => {
                 <div className='relative flex items-center justify-center gap-5'>
                   <div
                     className={`absolute right-10 transition-all duration-300 ${
-                      isSearchOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                      isSearchOpen
+                        ? "opacity-100 visible"
+                        : "opacity-0 invisible"
                     }`}
                     ref={searchRef}
                   >
                     {isSearchOpen && (
                       <div className='flex items-center gap-3'>
-                        <FaAngleDoubleRight className='cursor-pointer' onClick={() => setIsSearchOpen(!isSearchOpen)}/>
-                      <input
-                        type='text'
-                        placeholder='Search...'
-                        className='border rounded p-1'
-                      />
+                        <FaAngleDoubleRight
+                          className='cursor-pointer'
+                          onClick={() => setIsSearchOpen(!isSearchOpen)}
+                        />
+                        <input
+                          type='text'
+                          placeholder='Search...'
+                          className='border rounded p-1'
+                        />
                       </div>
                     )}
                   </div>
