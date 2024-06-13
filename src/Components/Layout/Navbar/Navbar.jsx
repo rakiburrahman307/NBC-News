@@ -57,7 +57,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(false)}
         >
           <div
-            className={`absolute min-h-full w-80 right-0 top-0 min-w-96 rounded-lg bg-white pb-5 text-center drop-shadow-2xl dark:bg-gray-800 dark:text-white transition-transform duration-500 ${
+            className={`absolute min-h-full w-80 right-0 top-0 min-w-96 rounded-lg bg-white pb-5 text-center drop-shadow-2xl transition-transform duration-500 ${
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
             onClick={(e) => e.stopPropagation()}
