@@ -73,13 +73,13 @@ const NewsDetailsPage = () => {
     <section className='max-w-[1920px] mx-auto mb-10'>
       <div className='h-[410px] bg-[#0E1E32]'>
         <h2 className='w-full md:w-[800px] mx-auto pt-10 h-auto md:h-[109px] font-semibold md:text-[42px] text-2xl text-white px-3 md:px-0'>
-          {article.title}
+          {article?.title}
         </h2>
       </div>
       <div className='w-full px-3 md:px-0 md:w-[1050px] mx-auto -mt-36 md:-mt-56'>
         <div className='mx-auto'>
           <img
-            src={article.urlToImage || detailCover}
+            src={article?.urlToImage || detailCover}
             alt='cover'
             className='w-full md:w-[1050px] h-auto md:h-[423px]'
           />
@@ -89,30 +89,30 @@ const NewsDetailsPage = () => {
           <div className='flex flex-col justify-start'>
             <div className='flex flex-col md:flex-row justify-start items-start gap-3 md:items-center mt-3 mb-3 px-3 md:px-0'>
               <p className='text-[#2A2A2A] w-24 h-5 text-[13px]'>
-                {new Date(article.publishedAt).toLocaleTimeString()}
+                {new Date(article?.publishedAt).toLocaleTimeString()}
               </p>
               <p className='w-[210px] h-5 text-[#2A2A2A] text-[13px]'>
-                By {article.author} | 4min read
+                By {article?.author} | 4min read
               </p>
             </div>
             <Floating></Floating>
             <p className='w-full relative px-3 md:px-0 md:w-[705px] text-justify text-lg text-[#2A2A2A]'>
-              {article.content}
+              {article?.content}
             </p>
             <div className='border-t-2 border-b-2 border-[#C31815] my-10'>
               <p className='text-[#2A2A2A] w-full px-3 md:px-0 md:w-[705px] text-3xl py-10'>
-                {article.description}
+                {article?.description}
               </p>
             </div>
             <div className='mx-auto w-full md:w-[560px]'>
               <img
-                src={article.urlToImage || detailCover}
+                src={article?.urlToImage || detailCover}
                 alt=''
                 className='w-full px-3 md:px-0 md:w-[560px] h-[319px]'
               />
               <div className='border-l-8 border-red-500 pl-5 mt-5 px-3 md:px-0'>
                 <p className='text-justify px-3 md:px-0'>
-                  {article.description}
+                  {article?.description}
                   <span className='text-red-700'>{article?.source?.name}</span>
                 </p>
               </div>

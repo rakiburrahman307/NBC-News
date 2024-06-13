@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../../../assets/logo.png";
 import { CiSearch } from "react-icons/ci";
 import { FaBarsStaggered } from "react-icons/fa6";
@@ -6,8 +6,11 @@ import { VscAccount } from "react-icons/vsc";
 import { IoMdClose } from "react-icons/io";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { FaAngleDoubleRight } from "react-icons/fa";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [navLink, setNavLink] = useState([
     { name: "Corona Updates", value: "health", active: true },
     { name: "Business", value: "business", active: false },
@@ -18,6 +21,8 @@ const Navbar = () => {
     { name: "Technology", value: "technology", active: false },
   ]);
 
+  const searchRef = useRef(null);
+
   const handleNavClick = (idx) => {
     const updatedNavLink = navLink.map((nav, index) => {
       if (index === idx) {
@@ -27,10 +32,24 @@ const Navbar = () => {
     });
     setNavLink(updatedNavLink);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setIsSearchOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className='max-h-20 max-w-[1920px] mx-auto'>
       <div className='h-screen flex overflow-hidden bg-gray-200'>
-        {/*  Sidebar  */}
+        {/* Sidebar */}
         <div
           className={`fixed z-[100] inset-0 bg-black/20 backdrop-blur-sm min-h-screen duration-300 ${
             isOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -63,9 +82,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/*  Content  */}
+        {/* Content */}
         <div className='flex-1 flex flex-col overflow-hidden'>
-          {/*  Navbar */}
+          {/* Navbar */}
           <div className='bg-white shadow'>
             <div className='container mx-auto'>
               <div className='flex justify-between items-center py-4 px-2 max-w-[1366px] mx-auto'>
@@ -91,11 +110,31 @@ const Navbar = () => {
                   <MdKeyboardDoubleArrowRight className='text-black hover:text-black/80 cursor-pointer' />
                 </ul>
 
-                <div className='flex items-center justify-center gap-5'>
+                <div className='relative flex items-center justify-center gap-5'>
+                  <div
+                    className={`absolute right-10 transition-all duration-300 ${
+                      isSearchOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                    }`}
+                    ref={searchRef}
+                  >
+                    {isSearchOpen && (
+                      <div className='flex items-center gap-3'>
+                        <FaAngleDoubleRight className='cursor-pointer' onClick={() => setIsSearchOpen(!isSearchOpen)}/>
+                      <input
+                        type='text'
+                        placeholder='Search...'
+                        className='border rounded p-1'
+                      />
+                      </div>
+                    )}
+                  </div>
                   <button className='w-5 h-6'>
                     <VscAccount />
                   </button>
-                  <button className='w-5 h-6'>
+                  <button
+                    onClick={() => setIsSearchOpen(!isSearchOpen)}
+                    className='w-5 h-6'
+                  >
                     <CiSearch />
                   </button>
                   <button
