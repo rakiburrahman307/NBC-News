@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
         <div className='w-[210px] h-[116px] flex flex-col md:justify-start items-center md:items-start'>
           <p className='font-medium text-base text-white cursor-pointer hover:text-white/80 hover:scale-105 hover:underline'>
-            Privacy Policy{" "}
+            Privacy Policy
           </p>
           <p className='font-medium text-base text-white cursor-pointer hover:text-white/80 hover:scale-105 hover:underline'>
             Do not sell my personal info
@@ -22,7 +22,7 @@ const Footer = () => {
             Terms of Service
           </p>
           <p className='font-medium text-base text-white cursor-pointer hover:text-white/80 hover:scale-105 hover:underline'>
-            nbcnews.com Site Map{" "}
+            nbcnews.com Site Map
           </p>
         </div>
         <div>
@@ -34,11 +34,9 @@ const Footer = () => {
               Contact
             </p>
             <p className='font-medium text-base text-white cursor-pointer hover:text-white/80 hover:scale-105 hover:underline'>
-              {" "}
               Careers
             </p>
             <p className='font-medium text-base text-white cursor-pointer hover:text-white/80 hover:scale-105 hover:underline'>
-              {" "}
               Coupons
             </p>
           </div>
