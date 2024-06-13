@@ -1,7 +1,7 @@
-# UniStayHub
+# NBC NEWS
 
 ## Description
-Welcome to UniStayHub – where finding the ideal student accommodation is as easy as a click. We understand the unique needs of students, and that's why we've created a platform that brings together a wide range of housing options tailored to your lifestyle and preferences.
+NBC News Application is a web-based news platform that fetches and displays the latest news articles from various categories using the News API. Users can browse news articles, view detailed news content, and explore related topics.
 
 ## Table of Contents
 - [Features](#features)
@@ -13,52 +13,18 @@ Welcome to UniStayHub – where finding the ideal student accommodation is as ea
 
 ## Features
 
-- Home Page
-- Meals Page
-- LogIn Page
-- Registration Page
-- User authentication for personalized experience
-- User registration for personalized experience
-- Responsive design for various devices
-- Implementation the Dark theme on the Home pages
-
-## User Panel
-
-- User Dashboard
-- User Profile
-- User Reviews 
-- User Meals orders
-
-## Admin Panel
-- Admin Dashboard
-- Admin Profile
-- All Reviews 
-- Manage Users
-- All Meals
-- Serve meals
-- Upcoming meals
-
+- **Browse News**: View the latest news articles from multiple categories like business, technology, sports, entertainment, and more.
+- **Search News**: Search for specific news articles.
+- **Detailed View**: Click on a news article to read the full content and see related topics.
+- **Responsive Design**: The application is fully responsive and works on all devices.
 
 
 ## Technologies Used
-- React.js
+- React
+- React Router
 - Tailwind CSS
-- Firebase (for authentication)
-- MongoDb (for data storage)
-- Sweet alert2
-- React icons
-- Node.js
-- Stripe Payment Gateway
-- React toasty
-- SweetAlert2
-- React Helmet
-- React-query
-- React-Modal
-- Aos animation
-
-## Component Libraries Use
-- DaisyUi 
-- FlowBite
+- News API
+- Vite
 
 ## Installation
 1. Clone the repository.
@@ -67,17 +33,13 @@ Welcome to UniStayHub – where finding the ideal student accommodation is as ea
 4. Run the application using `npm start`.
 
 ## Usage
-- Easily search and browse through a wide range of student accommodations.
-Filter options based on preferences such as location, budget, amenities, and more.
-
-- Access a platform designed specifically for students, understanding their unique accommodation requirements.
-
-- Find housing that fits student lifestyles, including proximity to universities, safety, and community features.
-
-- Connect with fellow students who are looking for accommodation or are already living in the same area.
+- Home Page: Open the application in your browser. The home page will display the latest news articles.
+- Search: Click on the search icon in the navbar to open the search input.
+- Article Details: Click on any news article title to view its detailed content. The details page will also show related topics.
+- Navigation: Use the navbar to navigate between different news categories.
 
 ## License
-This project is licensed under the [UniStayHub](LICENSE).
+This project is licensed under the [NBC NEWS](LICENSE).
 This project live link [https://656888cd76ceac2c2dbeb5a7--relaxed-puffpuff-31caad.netlify.app/](LInk).
 
 ## Contact
