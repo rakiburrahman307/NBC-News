@@ -45,7 +45,7 @@ NBC News Application is a web-based news platform that fetches and displays the 
 ## License
 
 This project is licensed under the [NBC NEWS](LICENSE).
-This project live link [https://656888cd76ceac2c2dbeb5a7--relaxed-puffpuff-31caad.netlify.app/](LInk).
+
 
 ## Contact
 

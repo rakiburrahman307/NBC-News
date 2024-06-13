@@ -2,6 +2,7 @@ import authorPic from "../../../assets/author.png";
 import PropTypes from "prop-types";
 import Floating from "./Floating";
 import GetNewsLetter from "./GetNewsLetter";
+
 const DetailsPageBody = ({ article, detailCover }) => {
   return (
     <div className='flex flex-col justify-start'>
@@ -13,7 +14,7 @@ const DetailsPageBody = ({ article, detailCover }) => {
           By {article?.author} | 4min read
         </p>
       </div>
-      <Floating></Floating>
+      <Floating />
       <p className='w-full relative px-3 md:px-0 md:w-[705px] text-justify text-lg text-[#2A2A2A]'>
         {article?.content}
       </p>
@@ -54,13 +55,24 @@ const DetailsPageBody = ({ article, detailCover }) => {
       <p className='w-full px-3 md:px-0 md:w-[705px] text-justify text-lg my-6 text-[#2A2A2A]'>
         {article?.content}
       </p>
-
       <GetNewsLetter authorPic={authorPic} article={article} />
     </div>
   );
 };
+
 DetailsPageBody.propTypes = {
-  article: PropTypes.object,
-  detailCover: PropTypes.object,
+  article: PropTypes.shape({
+    author: PropTypes.string,
+    content: PropTypes.string,
+    description: PropTypes.string,
+    publishedAt: PropTypes.string,
+    source: PropTypes.shape({
+      name: PropTypes.string,
+    }),
+    title: PropTypes.string,
+    urlToImage: PropTypes.string,
+  }).isRequired,
+  detailCover: PropTypes.string.isRequired,
 };
+
 export default DetailsPageBody;
