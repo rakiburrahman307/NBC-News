@@ -1,5 +1,6 @@
 # NBC NEWS
-# important Set the .env variable: VITE_API_KEY =aee63aee0c1449aa9b7b3804de042901
+# important 
+## Set the .env variable: VITE_API_KEY =aee63aee0c1449aa9b7b3804de042901
 
 Show quoted text
 ## Description
