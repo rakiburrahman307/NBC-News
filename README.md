@@ -1,5 +1,7 @@
 # NBC NEWS
+# important Set the .env variable: VITE_API_KEY =aee63aee0c1449aa9b7b3804de042901
 
+Show quoted text
 ## Description
 
 NBC News Application is a web-based news platform that fetches and displays the latest news articles from various categories using the News API. Users can browse news articles, view detailed news content, and explore related topics.
