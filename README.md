@@ -35,7 +35,7 @@ NBC News Application is a web-based news platform that fetches and displays the 
 1. Clone the repository.
 2. Install dependencies using `npm install`.
 3. Configure Firebase for authentication and data storage.
-4. Run the application using `npm start`.
+4. Run the application using `npm run dev`.
 
 ## Usage
 
